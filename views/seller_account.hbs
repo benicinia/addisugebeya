@@ -1,0 +1,136 @@
+{{!< usrnv1}}
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Seller /</span> Orders</h4>
+
+             
+
+              <hr class="my-5" />
+               {{#if prd}}
+                        {{#each prd}}
+               <div class="card mt-5">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-4 mt-3 mt-md-0">
+            <p class="text-uppercase text-muted my-0">order placed</p>
+            <p class="text-uppercase text-muted my-0">{{this.or_date}}</p>
+          </div>
+
+          <div class="col-md-4 mt-3 mt-md-0">
+            <p class="text-uppercase text-muted my-0">total</p>
+            <p class="text-uppercase text-muted my-0">
+              <i class="fas fa-rupee-sign"></i>  <span class="text-danger">{{this.oramt}}</span>
+            </p>
+          </div>
+
+          <div class="col-md-4 mt-3 mt-md-0">
+            <p class="text-uppercase text-muted my-0 float-md-right">order # X{{this.or_id}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          
+
+          <div class="col-md-5">
+            <a href="#" style="color: #007bff!important;text-decoration: none; background-color: transparent;" >{{this.name}}</a>
+            <p style="color: #007bff!important;text-decoration: none; background-color: transparent;"  class="text-muted my-0">From : Narendra Modi</p>
+            
+            <p class="text-muted my-0">Shipping : Gulele W-9, st. tanzania, Block- 7/100</p>
+             <p class="text-muted my-0">Delivery By : <span class="text-danger">{{this.shping}}</span></p>
+           
+          </div>
+
+          <div class="col-md-6 d-flex flex-column">
+            <a href="#" class="btn btn-outline-secondary btn-sm w-50 ml-auto my-1">Shipping</a>
+            <a href="#" class="btn btn-outline-info btn-sm w-50 ml-auto my-1">Generate Invoice</a>
+          </div>
+        </div>
+      </div>
+    </div> {{/each}}{{/if}}
+
+              <!-- Bootstrap Table with Header - Dark -->
+              <div class="card">
+                <h5 class="card-header">Your Orders</h5>
+                <div class="table-responsive text-nowrap">
+                  <table class="table">
+                    <thead class="table-dark">
+                      <tr>
+                        <th>Id</th>
+                        <th>Time</th>
+                        <th>Items</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                       {{#if prd}}
+                        {{#each prd}}
+                      <tr>
+                      
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{this.or_id}}</strong></td>
+                        <td>{{this.or_date}}</td>
+                        <td><span class="badge bg-label-primary me-1"><a href="/orders/ordet/{{this.or_id}}">view</a></span></td>
+                        <td><span class="badge bg-label-primary me-1">{{this.shping}}</span></td>
+                        <td><span class="badge bg-label-primary me-1">Active</span></td>
+                      </tr>
+                        {{/each}}{{/if}}
+                      
+                      
+                      
+                    </tbody>
+                    
+                  </table>
+                </div>
+              </div>
+              <!--/ Bootstrap Table with Header Dark -->
+
+            
+              
+
+             
+              
+              
+
+
+            </div>
+            <!-- / Content -->
+
+            <!-- Footer -->
+            <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+                <div class="mb-2 mb-md-0">
+                  ©
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  , made with ❤️ by 
+                  <a href="#" target="_blank" class="footer-link fw-bolder">x</a>
+                </div>
+                <div>
+                  <a href="#" class="footer-link me-4" target="_blank">L</a>
+                  <a href="#" target="_blank" class="footer-link me-4">M</a>
+
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="footer-link me-4"
+                    >Documentation</a
+                  >
+
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="footer-link me-4"
+                    >Support</a
+                  >
+                </div>
+              </div>
+            </footer>
+            <!-- / Footer -->
+
+            <div class="content-backdrop fade"></div>
+          </div>

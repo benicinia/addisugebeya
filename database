@@ -1,0 +1,47 @@
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+var mysql = require('mysql');
+var bodyparser = require('body-parser');
+//const Mysqli = require('mysqli');
+var app = express();
+
+
+var mysql      = require('mysql2');
+
+var pool  = new mysql.createPool({
+  connectionLimit : 10,
+ host            : '127.0.0.1',
+  user            : 'root',
+  password        : '',
+  database        : 'gebeya',
+  port:'3306'
+});
+
+
+
+//const connection = await pool.createConnection({host:'localhost', user: 'root', database: 'test'});
+pool.getConnection(function(err, connection) {
+  //if (err) throw err; // not connected!
+  try {
+    if(!err==true){
+     console.log('Connected to Addisu -G!');
+      pool.on('release', function (connection) {
+        console.log('Connection %d released', connection.threadId);
+      });
+    
+      }
+  } catch (err) {
+    console.log('not connected!');
+  }
+
+   
+});
+
+
+
+
+module.exports = pool;
+

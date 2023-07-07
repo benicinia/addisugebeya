@@ -1,0 +1,75 @@
+{{!< usrnv2}}
+
+  <!-- Login Form Card Starts -->
+  <div class="container mb-5">
+    <div class="card mx-auto mt-5 pb-3 shadow rounded" style="width: 25rem;">
+      <div class="card-body">
+        <h4 class="card-title">Login</h4>
+        <!-- Login Form Start -->
+        <form class="needs-validation"  method="post" action="/sellerDash" novalidate>
+          <div class="form-group">
+            <label for="userEmail">Email: </label>
+            <input type="email" name="email" class="form-control" placeholder="Yor email" id="userEmail"
+              aria-describedby="emailHelp" required>
+            <small id="emailHelp" class="form-text text-muted"><i class="fas text-primary fa-info"></i> We'll never share your email with anyone else.</small>
+            <div class="valid-feedback">
+              <i class="far text-success fa-thumbs-up"></i> OK
+            </div>
+            <div class="invalid-feedback">
+              <i class="fas text-danger fa-exclamation-triangle"></i> Some error in email.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="userPassword">Password: </label>
+            <input type="password" class="form-control" placeholder="******" name="password" id="userPassword"
+              aria-describedby="passwordHelp" required minlength="6">
+            <small id="passwordHelp" class="form-text text-muted"><i class="fas text-primary fa-info"></i> Password must be at least 6 characters.</small>
+            <div class="valid-feedback">
+              <i class="far text-success fa-thumbs-up"></i> OK
+            </div>
+            <div class="invalid-feedback">
+              <i class="fas text-danger fa-exclamation-triangle"></i> Some error in password.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-warning w-100 shadow btn-sm rounded">Sign in</button>
+        </form> <!-- Login Form Ends -->
+
+        <!-- OR Seperator -->
+        <hr class="hr-text" data-content="New to Addis?">
+
+        <!-- Create account button -->
+        <a href="/register" class="btn btn-dark btn-sm w-100 mt-2">Create your Addis account</a>
+        <a href="#" class="btn btn-outline-success btn-sm w-100 mt-2">
+          <i class="fab fa-google"></i> Sign in with Google
+        </a>
+        <a href="#" class="btn btn-outline-primary btn-sm w-100 mt-2">
+          <i class="fab fa-facebook-square"></i> Sign in with Facebook
+        </a>
+      </div>
+    </div>
+  </div> <!-- Login Form Card Ends -->
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>

@@ -1,0 +1,11 @@
+{
+    "watch": [
+        "public/",
+        "routes/",
+        "app.js"
+    ],
+    "ignore": [
+        "/simple_cart_master"
+    ],
+    "exec": "node app.js"
+}

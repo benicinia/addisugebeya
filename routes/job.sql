@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS `jobs` (
+ `j_id` INT NOT NULL AUTO_INCREMENT,
+ `c-id` INT(200),
+ `remoteFriendly` VARCHAR(4),
+ `market`  mediumtext COLLATE utf8mb4_bin,
+ `size` INT(8),
+ `position` TEXT(60),
+ `title` VARCHAR(255),
+ `description` mediumtext COLLATE utf8mb4_bin,
+ `url` VARCHAR(255),
+ `type` VARCHAR(255),
+`posted` VARCHAR(255),
+`deadline` VARCHAR(255),
+`location` VARCHAR(255),
+`skills` VARCHAR(255),
+`salaryRange` VARCHAR(255),
+`equity` VARCHAR(255),
+`perks` VARCHAR(255),
+`apply` VARCHAR(255),
+   PRIMARY KEY(`j_id`)
+) ENGINE=InnoDB
